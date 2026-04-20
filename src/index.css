@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;700;900&family=Patrick+Hand&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Baskerville", serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-scrawl: "Patrick Hand", cursive;
+}
+
+:root {
+  --mm-bg: #fdfaf3;
+  --mm-sidebar: #f4efdf;
+  --mm-border: #d2c19a;
+  --mm-text: #2c251d;
+  --mm-header: #922610;
+  --mm-accent: #b93318;
+  --mm-stat-bg: #fdfaf3;
+  --mm-input: #ffffff;
+  --mm-button-text: #ffffff;
+  --mm-muted: #7d6e5c;
+}
+
+.dark {
+  --mm-bg: #0f1113;
+  --mm-sidebar: #181a1d;
+  --mm-border: #2d3136;
+  --mm-text: #d1d5db;
+  --mm-header: #f87171;
+  --mm-accent: #ef4444;
+  --mm-stat-bg: #14161a;
+  --mm-input: #1f2937;
+  --mm-button-text: #ffffff;
+  --mm-muted: #6b7280;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-[var(--mm-text)] selection:bg-[var(--mm-accent)] selection:text-white;
+    background-color: var(--mm-bg);
+    font-family: var(--font-serif);
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--mm-border);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--mm-accent);
+}
+
+.mm-stat-block {
+  padding: 2.5rem;
+  background: var(--mm-stat-bg);
+  border-top: 6px solid var(--mm-header);
+  border-bottom: 6px solid var(--mm-header);
+  box-shadow: 0 15px 35px -12px rgba(0,0,0,0.2);
+  position: relative;
+  transition: all 0.3s ease;
+  max-width: 100%;
+}
+
+.mm-divider {
+  height: 4px;
+  background: var(--mm-header);
+  margin: 1.25rem 0;
+  clip-path: polygon(0 40%, 100% 0, 100% 60%, 0 100%);
+}
+
+.mm-header {
+  color: var(--mm-header);
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+.mm-sub-header {
+  color: var(--mm-header);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--mm-header);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-display);
+}
+
+.mm-stat-label {
+  color: var(--mm-header);
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.scrawl-text {
+  font-family: var(--font-scrawl);
+}
+
+input, select, textarea {
+  background-color: var(--mm-input);
+  color: var(--mm-text);
+  border: 1px solid var(--mm-border);
+}
+
+button.primary {
+  background-color: var(--mm-accent);
+  color: var(--mm-button-text);
+}
