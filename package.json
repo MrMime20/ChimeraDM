@@ -10,6 +10,11 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
+    "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",  // This is what 'npm run build' triggers
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@google/genai": "^1.29.0",
     "@tailwindcss/vite": "^4.1.14",
